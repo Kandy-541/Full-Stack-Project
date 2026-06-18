@@ -1,4 +1,4 @@
-# PropSpace - Full Stack Property Listing Application
+# PropSpace 
 
 A modern, full-stack property listing and management application built with React and Node.js. PropSpace allows users to browse, list, and manage property rentals with user authentication and a responsive interface.
 
