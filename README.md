@@ -159,19 +159,10 @@ npm install
 
 ## Environment Setup
 
-Create a `.env` file in the backend directory by copying `.env.example`:
+Created a `.env` file in the backend directory by copying `.env.example`:
 
-```bash
-cp .env.example .env
-```
+and .gitinore the .env before pushing
 
-Then fill in the values with your actual configuration:
-
-- `PORT` - Server port (default: 5000)
-- `MONGODB_URI` - MongoDB connection string
-- `JWT_SECRET` - Secret key for JWT signing (use a strong random value)
-
-**⚠️ IMPORTANT:** Never commit `.env` files to version control. Use `.env.example` to document required variables.
 
 ## Running the Application
 
