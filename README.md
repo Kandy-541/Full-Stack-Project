@@ -83,12 +83,7 @@ Full-Stack-Project/
         ├── main.jsx         # React entry point
         ├── App.jsx          # Root component
         ├── styles.css       # Global styles
-        ├── assets/          # Static assets and images
-        │   ├── images/      # Property and UI images
-        │   │   ├── properties/    # Property listing images
-        │   │   └── ui/            # UI icons and logos
-        │   └── icons/       # Application icons
-        ├── components/      # Reusable components
+        |── components/      # Reusable components
         │   ├── Header.jsx
         │   ├── PropertyCard.jsx
         │   └── PropertyForm.jsx
