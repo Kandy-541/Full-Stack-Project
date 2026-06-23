@@ -83,11 +83,6 @@ Full-Stack-Project/
         ├── main.jsx         # React entry point
         ├── App.jsx          # Root component
         ├── styles.css       # Global styles
-        ├── assets/          # Static assets and images
-        │   ├── images/      # Property and UI images
-        │   │   ├── properties/    # Property listing images
-        │   │   └── ui/            # UI icons and logos
-        │   └── icons/       # Application icons
         ├── components/      # Reusable components
         │   ├── Header.jsx
         │   ├── PropertyCard.jsx
@@ -320,7 +315,6 @@ import apartmentImage from 'https://images.unsplash.com/photo-1566073771259-6a85
 import houseImage from 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=500&h=400&fit=crop';
 import studioImage from 'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=500&h=400&fit=crop';
 
-
 <!-- **Real Property Images:**
 
 The seeding script includes high-quality photographs from Unsplash:
@@ -331,12 +325,11 @@ The seeding script includes high-quality photographs from Unsplash:
 - Luxury penthouses with panoramic views
 - Beachfront villas with ocean access -->
 
-**Asset Organization**:
+**Image Organization**:
 
-- `assets/images/` - All image files
-  - `properties/` - Placeholder images and property listing images
-  - `ui/` - UI-related images such as backgrounds or decorative elements
-- `assets/icons/` - Application icons and icon assets
+- Property images are loaded from backend-provided `imageUrls`
+- Remote placeholder images are used when custom images are unavailable
+- Local static asset folders are not required for property image fallback
 
 **Using Property Images in Components:**
 
@@ -366,10 +359,9 @@ The PropertyCard component automatically displays:
 
 **Image Management:**
 
-- Store static placeholder images in the assets folder
 - Property images uploaded by users are stored via backend/cloud service
-- Custom images in the `imageUrls` array take priority over placeholders
-- Placeholders ensure good UX even when images are missing
+- Custom images in the `imageUrls` array take priority over remote placeholders
+- Remote placeholders ensure good UX even when images are missing
 
 **Backend Image Linking:**
 
@@ -388,20 +380,7 @@ Properties store images in MongoDB as an array of URLs:
 
 **Populating Sample Properties:**
 
-Run the seeding script to populate the database with sample properties containing linked images:
-
-```bash
-cd backend
-node seeds/seedProperties.js
-```
-
-This creates sample properties with:
-
-- All three property types (Apartment, House, Studio)
-- High-quality real photographs from Unsplash
-- Realistic property descriptions
-- Multiple images per property
-- Development and testing data ready to use
+Sample data is no longer seeded via a local seed script.
 
 ## Development Workflow
 
@@ -409,11 +388,9 @@ This creates sample properties with:
 2. Set up environment variables
 3. Install dependencies for both backend and frontend
 4. Start MongoDB
-5. (Optional) Run `node seeds/seedProperties.js` to populate sample data with real images
-6. Run backend: `npm run dev` in backend directory
-7. Run frontend: `npm start` in frontend directory
-8. Navigate to `http://localhost:5173` to access the application
-
+5. Run backend: `npm run dev` in backend directory
+6. Run frontend: `npm start` in frontend directory
+7. Navigate to `http://localhost:5173` to access the application
 
 **Real Property Images (from Unsplash):**
 

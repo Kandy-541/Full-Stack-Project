@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const API = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
@@ -32,32 +32,44 @@ export default function RegisterPage({ onLogin }) {
   };
 
   return (
-    <section className="page card">
-      <h1>Register</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Username
-          <input value={username} onChange={(e) => setUsername(e.target.value)} required />
-        </label>
-        <label>
-          Email
-          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-        </label>
-        <label>
-          Phone number
-          <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+221 77 000 0000" />
-        </label>
-        <label>
-          Avatar URL
-          <input value={avatarUrl} onChange={(e) => setAvatarUrl(e.target.value)} placeholder="https://example.com/photo.jpg" />
-        </label>
-        <label>
-          Password
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required minLength={6} />
-        </label>
-        {error && <p className="error">{error}</p>}
-        <button type="submit">Create account</button>
-      </form>
+    <section className="page auth-page">
+      <div className="auth-card card">
+        <div className="auth-header">
+          <p className="eyebrow">Create your account</p>
+          <h1>Set up your PropSpace profile</h1>
+          <p className="auth-subtitle">
+            Join PropSpace to manage your profile, listings and saved preferences in one secure place.
+          </p>
+        </div>
+
+        <form onSubmit={handleSubmit}>
+          <label>
+            Username
+            <input value={username} onChange={(e) => setUsername(e.target.value)} required />
+          </label>
+          <label>
+            Email
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          </label>
+          <label>
+            Phone number
+            <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+221 77 000 0000" />
+          </label>
+          <label>
+            Avatar URL
+            <input value={avatarUrl} onChange={(e) => setAvatarUrl(e.target.value)} placeholder="https://example.com/photo.jpg" />
+          </label>
+          <label>
+            Password
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required minLength={6} />
+          </label>
+          {error && <p className="error">{error}</p>}
+          <button type="submit">Create account</button>
+          <p className="auth-footer">
+            Already registered? <Link to="/login">Sign in</Link> to update your account.
+          </p>
+        </form>
+      </div>
     </section>
   );
 }
