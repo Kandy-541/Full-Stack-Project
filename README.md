@@ -1,4 +1,4 @@
-# PropSpace - Full Stack Property Listing Application
+# PropSpace 
 
 A modern, full-stack property listing and management application built with React and Node.js. PropSpace allows users to browse, list, and manage property rentals with user authentication and a responsive interface.
 
@@ -83,7 +83,7 @@ Full-Stack-Project/
         ├── main.jsx         # React entry point
         ├── App.jsx          # Root component
         ├── styles.css       # Global styles
-        ├── components/      # Reusable components
+        |── components/      # Reusable components
         │   ├── Header.jsx
         │   ├── PropertyCard.jsx
         │   └── PropertyForm.jsx
@@ -159,19 +159,10 @@ npm install
 
 ## Environment Setup
 
-Create a `.env` file in the backend directory by copying `.env.example`:
+Created a `.env` file in the backend directory by copying `.env.example`:
 
-```bash
-cp .env.example .env
-```
+and .gitinore the .env before pushing
 
-Then fill in the values with your actual configuration:
-
-- `PORT` - Server port (default: 5000)
-- `MONGODB_URI` - MongoDB connection string
-- `JWT_SECRET` - Secret key for JWT signing (use a strong random value)
-
-**⚠️ IMPORTANT:** Never commit `.env` files to version control. Use `.env.example` to document required variables.
 
 ## Running the Application
 
